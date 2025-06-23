@@ -1,1 +1,1 @@
-## WebSide Link - https://babu-decoraters.netlify.app/
+## WebSite Link - https://babu-decoraters.netlify.app/
