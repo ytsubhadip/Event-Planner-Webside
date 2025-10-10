@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babu Decoraters</title>
+    <!--link fontwosam file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--link css file-->
+    <link rel="icon" href="image/logo-main.jpg" type="image/jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/galary.css">
+    <link rel="stylesheet" href="css/review.css">
+
+    <!-- loder css -->
+    <style>
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader-logo {
+            width: 150px;
+            height: auto;
+            animation: fadeIn 1.5s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .loader-logo {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .loader-logo {
+                width: 100px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Updated Loader Section -->
+    <div id="loader">
+        <img src="image/logo-main.jpg" alt="Babu Decoraters Logo" class="loader-logo">
+    </div>
+    <script>
+        (function() {
+            const LOADER_KEY = 'hasSeenLoader';
+            const hasSeen = localStorage.getItem(LOADER_KEY);
+
+            if (hasSeen) {
+                // Hide loader immediately on subsequent visits
+                document.addEventListener('DOMContentLoaded', function() {
+                    const loader = document.getElementById('loader');
+                    if (loader) loader.style.display = 'none';
+                });
+            } else {
+                // Show loader only the first time, then set flag
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        const loader = document.getElementById('loader');
+                        if (loader) loader.style.display = 'none';
+                        localStorage.setItem(LOADER_KEY, '1');
+                    }, 3000); // 3 seconds delay
+                });
+            }
+        })();
+    </script>
+
+    <!--hader section-->
+    <header class="header">
+        <a href="#">
+            <img src="image/logo-main.jpg" alt="logo" class="logotext">
+        </a>
+        <!--navbar-->
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Service</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#review">Review</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <!--bar logo-->
+        <div>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+    <!--end hader section-->
+
+    <!--start home-->
+    <section class="home" id="home" data-aos="fade-down">
+        <div class="home-slider">
+            <div class="home-slide"></div>
+            <div class="home-slide"></div>
+            <div class="home-slide"></div>
+            <div class="home-slide"></div>
+            <div class="home-slide"></div>
+            <div class="home-slide"></div>
+        </div>
+        <div class="contant">
+            <h1 class="main-title">Event Planner</h1>
+            <h1 class="typing-title">Our Service- <span id="type-text"></span></h1>
+            <div class="logo-container">
+                <img src="image/logo-main.jpg" alt="Babu Decoraters Logo" class="company-logo">
+            </div>
+            <p class="description">"We transform your dreams into extraordinary celebrations. From elegant weddings to
+                grand corporate events, our expert team crafts unforgettable experiences with meticulous attention to
+                detail, stunning decor, and flawless execution."</p>
+            <div class="home-buttons">
+                <a href="#contact" class="btn">Book Now</a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/161ShcEkFB/" class="social-icon" target="_blank"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/decoratorsbabuevent?igsh=MTBjaTd0ejV0MDM4dQ=="
+                        class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.link/stpv7b" class="social-icon" target="_blank"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end home-->
+
+    <!--about us section start-->
+    <section class="about" id="about" data-aos="fade-up">
+        <h1 class="heading"><span>About</span> us </h1>
+
+        <div class="row about-card">
+            <div class="img" aria-label="About Babu Decoraters image">
+                <!-- decorative background via CSS -->
+            </div>
+            <div class="content">
+                <h3>We craft unforgettable celebrations for every occasion</h3>
+                <p>From elegant weddings to cultural ceremonies and corporate events, our expert team designs decor,
+                    lighting, florals, sound, catering coordination, and photography arrangements with precision and heart.</p>
+
+                <ul class="about-highlights">
+                    <li><i class="fa-solid fa-sparkles"></i> Premium decor & styling</li>
+                    <li><i class="fa-solid fa-wand-magic-sparkles"></i> Theme-based customization</li>
+                    <li><i class="fa-solid fa-lightbulb"></i> Professional lighting & sound</li>
+                    <li><i class="fa-solid fa-heart"></i> On-time, end-to-end execution</li>
+                </ul>
+
+                <div class="about-stats">
+                    <div class="stat"><span class="num">500+</span><span class="label">Events Done</span></div>
+                    <div class="stat"><span class="num">10+</span><span class="label">Years Experience</span></div>
+                    <div class="stat"><span class="num">98%</span><span class="label">Happy Clients</span></div>
+                    <div class="stat"><span class="num">24/7</span><span class="label">Support</span></div>
+                </div>
+
+                <a href="about.html" class="btn">More About Us</a>
+            </div>
+        </div>
+    </section>
+    <!--about us section end-->
+
+    <!--service start-->
+    <section class="servise" id="service" data-aos="fade-down">
+        <h1 class="heading"> Our <span>service</span></h1>
+        <div class="boxContainer">
+
+            <div class="box">
+                <i class="fas fa-map-marker-alt"> </i>
+                <h3>Wedding</h3>
+                <p>"A wedding event planner crafts magical moments, coordinating venues, decor, and logistics to ensure
+                    couples' special day unfolds seamlessly."</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"> </i>
+                <h3>Rice ceremony</h3>
+                <p>"A Rice Ceremony event planner designs a cultural celebration, honoring tradition with meticulous
+                    coordination of rituals, decor, and guest experience."</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"> </i>
+                <h3>Baby shower</h3>
+                <p>"A baby shower event planner curates a joyous occasion, coordinating themes, games, and gifts to
+                    celebrate the imminent arrival of a new family member."</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"> </i>
+                <h3>Puja pandal</h3>
+                <p>"A Puja Pandal event planner creates a sacred space, meticulously organizing rituals, decorations,
+                    and logistics to foster spiritual connections and community gatherings."</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"> </i>
+                <h3>Anniversary</h3>
+                <p>"An anniversary event planner crafts a heartfelt celebration, coordinating venues, themes, and
+                    surprises to commemorate love, milestones, and cherished memories."</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"> </i>
+                <h3>Ring ceremony</h3>
+                <p>"A ring ceremony event planner orchestrates a romantic affair, meticulously arranging venues, decor,
+                    and rituals to mark the beginning of a couple's journey towards marriage."</p>
+            </div>
+    </section>
+    <!--service end-->
+
+    <!-- Updated Gallery Section with Multi-Image Slider -->
+    <section class="gallery" id="gallery" data-aos="fade-up">
+        <h1 class="heading"> Events <span>Gallery</span> </h1>
+
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider-item"><img src="image/home-image/img2.jpg" alt="Gallery Image 1"></div>
+                <div class="slider-item"><img src="image/home-image/img1.jpg" alt="Gallery Image 2"></div>
+                <div class="slider-item"><img src="image/home-image/img3.jpg" alt="Gallery Image 3"></div>
+                <div class="slider-item"><img src="image/home-image/img4.jpg" alt="Gallery Image 4"></div>
+                <div class="slider-item"><img src="image/home-image/img5.jpg" alt="Gallery Image 5"></div>
+                <div class="slider-item"><img src="image/home-image/img6.jpg" alt="Gallery Image 6"></div>
+                <div class="slider-item"><img src="image/home-image/img7.jpg" alt="Gallery Image 7"></div>
+                <div class="slider-item"><img src="image/home-image/img8.jpg" alt="Gallery Image 8"></div>
+                <div class="slider-item"><img src="image/home-image/img9.jpg" alt="Gallery Image 9"></div>
+                <div class="slider-item"><img src="image/home-image/img10.jpg" alt="Gallery Image 10"></div>
+                <div class="slider-item"><img src="image/home-image/img11.jpg" alt="Gallery Image 10"></div>
+                <div class="slider-item"><img src="image/home-image/img12.jpg" alt="Gallery Image 11"></div>
+                <div class="slider-item"><img src="image/home-image/img21.jpg" alt="Gallery Image 12"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--review saction-->
+    <section class="review" id="review" data-aos="fade-up">
+        <h1 class="heading"> Client's <span>Reviews</span> </h1>
+
+        <div class="review-container">
+            <div class="review-box">
+                <img src="image/client/c1.jpg" alt="Client 1">
+                <h3>Pratik Dutta</h3>
+                <p>"Very Good Decoration Service. Babu Decorators Completed All The Work Very Fast And On Time. Their
+                    Team Worked Smoothly And Made The Venue Look Beautiful. My Family And Guests Were Very Happy With
+                    Their Quick And Neat Decoration. I Would Surely Recommend Them."</p>
+            </div>
+
+            <div class="review-box">
+                <img src="image/client/c2.jpg" alt="Client 2">
+                <h3>Madhumita & Mohon</h3>
+                <p>"Babu Decorators Service Was Excellent. They Finished The Decoration Much Faster Than Expected And
+                    Everything Looked Perfect. The Stage, Lights And Flowers Were Arranged Very Nicely. They Are Truly
+                    Professional And Reliable. I Strongly Recommend Their Decoration Service."</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section Start -->
+    <section class="contact" id="contact" data-aos="fade-down">
+        <h1 class="heading"><span>Contact</span> Us</h1>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/mwpbblan" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> Contact Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+            <div class="contact-info">
+                <h3>Get in touch</h3>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="info-content">
+                        <h4>Call Us</h4>
+                        <p>+91 9434105048</p>
+                        <p>+91 9832966998</p>
+                        <p>+91 62944 64744</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <h4>Email Us</h4>
+                        <p>decoratorsbabu@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-content">
+                        <h4>Visit Us</h4>
+                        <p>Thakurchak, Belda, Paschim Medinipur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/161ShcEkFB/" class="social-icon"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/decoratorsbabuevent?igsh=MTBjaTd0ejV0MDM4dQ=="
+                        class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.link/stpv7b" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Menu</h3>
+                <ul class="footer-menu">
+                    <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-angle-right"></i> About</a></li>
+                    <li><a href="#service"><i class="fas fa-angle-right"></i> Services</a></li>
+                    <li><a href="#gallery"><i class="fas fa-angle-right"></i> Gallery</a></li>
+                    <li><a href="#contact"><i class="fas fa-angle-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +91 9434105048</p>
+                <p><i class="fas fa-envelope"></i> decoratorsbabu@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Thakurchak, Belda, Paschim Medinipur</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Babu Decoraters. All rights reserved.<br> Developed by: <a
+                    href="https://www.linkedin.com/in/subhadip-bar-496a682a2/">YT SUBHADIP</a></p>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+</body>
+<script src="javascripts/gallery.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="javascripts/javascript.js"></script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    var typed = new Typed('#type-text', {
+        strings: ['Wedding', 'Rice Ceremony', 'Baby Shower', 'Puja Pandal', 'Anniversary', 'Ring Ceremony'],
+        loop: true,
+        typeSpeed: 150,
+    });
+</script>
+
+<script>
+    var typed = new Typed('#element', {
+        strings: ['&amp;coder.', 'Editar  .'],
+        typeSpeed: 30,
+    });
+
+</script>
+
+<script>
+    AOS.init();
+</script>
+
+</html>
