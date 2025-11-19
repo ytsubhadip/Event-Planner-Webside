@@ -1,0 +1,132 @@
+/* Add animation to about section */
+.about .row {
+    animation: fadeIn 1s ease-out;
+}
+
+.about .img {
+    animation: scaleIn 1s ease-out;
+}
+
+/*about us start*/
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about .img {
+    flex: 1 1 45rem;
+    padding: 1rem;
+
+}
+
+.img {
+    background-image: url('../image/poster/about2.jpg');
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    box-shadow: var(--box_shadow);
+    border-radius: 3px;
+
+}
+.about .row .content {
+    flex: 1 1 45rem;
+
+}
+
+.about .row .content h3 {
+    font-size: 3.5rem;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 2;
+    text-align: center;
+}
+
+/*about us end*/
+/* Enhanced About section */
+.about {
+    position: relative;
+}
+
+.about-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 3rem;
+    line-height: 1.3;
+    text-align: left;
+}
+
+.about .row .content p {
+    text-align: left;
+    color: #444;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 1.5rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.about-highlights li {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-highlights i {
+    color: var(--main);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.about-stats .stat {
+    background: linear-gradient(180deg, rgba(240,16,39,0.08), rgba(240,16,39,0.02));
+    border: 1px solid rgba(240,16,39,0.15);
+    border-radius: 12px;
+    text-align: center;
+    padding: 1.2rem 0.8rem;
+}
+
+.about-stats .num {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #111;
+}
+
+.about-stats .label {
+    display: block;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .about .row .content h3 { font-size: 2.4rem; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+}

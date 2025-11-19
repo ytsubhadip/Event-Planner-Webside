@@ -92,6 +92,19 @@
         .slider-btn:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+
+        /* Add animation to gallery */
+.gallery .boxContaner .box {
+    animation: scaleIn 0.5s ease-out;
+}
+
+.gallery .boxContaner .box img {
+    transition: transform 0.5s ease;
+}
+
+.gallery .boxContaner .box:hover img {
+    transform: scale(1.1);
+}
         @media (max-width: 480px) {
             .slider-btn {
                 display: none;

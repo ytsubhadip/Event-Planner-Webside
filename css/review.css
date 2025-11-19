@@ -42,6 +42,53 @@
     line-height: 1.6;
 }
 
+
+/*service start*/
+.servise .boxContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+}
+
+.servise .boxContainer .box {
+    background: rgba(20, 19, 19);
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: var(--box_shadow);
+    border-radius: 10px;
+}
+
+.servise .boxContainer .box i {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    line-height: 6rem;
+    font-size: 2.5rem;
+    background: var(--main);
+    color: #fff;
+
+}
+
+.servise .boxContainer .box:hover i {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.servise .boxContainer .box h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.servise .boxContainer .box p {
+    line-height: 1.8;
+    color: white;
+    font-size: 1.4rem;
+}
+
+/*service end*/
 @media (max-width: 768px) {
     .review-box {
         max-width: 25rem;

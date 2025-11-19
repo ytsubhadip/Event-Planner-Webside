@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(0);
     
     // Auto-advance slides every 8 seconds
-    setInterval(nextSlide, 8000);
+    setInterval(nextSlide, 9000);
     
     // Add smooth transitions on window resize
     window.addEventListener('resize', function() {
