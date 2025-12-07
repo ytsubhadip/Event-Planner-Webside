@@ -5,6 +5,62 @@
 }
 
 .footer-menu li a::after {
+/* Map embed responsive wrapper */
+.map-embed {
+    position: relative;
+    width: 100%;
+    /* 16:9 aspect ratio */
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+}
+.map-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Tweak footer for smaller screens */
+@media (max-width: 900px) {
+    .footer {
+        padding: 3rem 6%;
+    }
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 2rem;
+    }
+    .footer-section h3 {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 2.5rem 5% 1.5rem;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .social-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 1.6rem;
+    }
+    .footer-section p,
+    .footer-menu li a,
+    .footer-bottom p {
+        font-size: 1.3rem;
+    }
+    .map-embed {
+        padding-top: 66.66%; /* a little taller on small screens for usability */
+    }
+}
     content: '';
     position: absolute;
     bottom: 0;
